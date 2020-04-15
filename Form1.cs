@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PlaceholderTextBox;
 using Newtonsoft.Json;
 using System.IO;
 
@@ -29,6 +20,10 @@ namespace WindowsFormsApp3
             public string Surname { get; set; }
             public string Date { get; set; }
             public Adress Adress { get; set; }
+            public override string ToString()
+            {
+                return  this.Name + ", " + this.Surname + ", Birth date: " + this.Date;
+            }
         }
 
         public Form1()
@@ -53,7 +48,6 @@ namespace WindowsFormsApp3
 
             person.Adress = adress;
 
-
             string json = JsonConvert.SerializeObject(person);
 
 
@@ -76,6 +70,40 @@ namespace WindowsFormsApp3
                 }
             }
 
+        }
+
+        private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "txt files (*.txt)|*.txt";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = ofd.FileName;
+                string[] lines = File.ReadAllLines(filePath);
+                Person[] people = new Person[lines.Length];
+
+                int errorCount = 0;
+                int correctCount = lines.Length;
+
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    try
+                    {
+                        people[i] = JsonConvert.DeserializeObject<Person>(lines[i]);
+                        savedUsersListBox.Items.Add(people[i]);
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error in data type. Line: " + (i + 1));
+                        errorCount++;
+                    }
+
+                }
+
+                MessageBox.Show("Summary: \n -correct count: " + (correctCount - errorCount) + " \n -error count: " + errorCount);
+            }
         }
     }
 }

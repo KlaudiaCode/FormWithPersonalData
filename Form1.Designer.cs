@@ -37,13 +37,16 @@
             this.streetTextBox = new System.Windows.Forms.TextBox();
             this.birthDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cityTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.streetNumTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.savedUsersListBox = new System.Windows.Forms.ListBox();
+            this.buttonOpen = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,15 +145,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(294, 234);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 205);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "City";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -167,15 +161,14 @@
             this.cityTextBox.Size = new System.Drawing.Size(192, 20);
             this.cityTextBox.TabIndex = 8;
             // 
-            // button1
+            // label6
             // 
-            this.button1.Location = new System.Drawing.Point(211, 296);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "SEND";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 205);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "City";
             // 
             // streetNumTextBox
             // 
@@ -193,6 +186,16 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Street number";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(211, 296);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "SEND";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -202,11 +205,41 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Enter your personal information below";
             // 
+            // savedUsersListBox
+            // 
+            this.savedUsersListBox.FormattingEnabled = true;
+            this.savedUsersListBox.Location = new System.Drawing.Point(349, 37);
+            this.savedUsersListBox.Name = "savedUsersListBox";
+            this.savedUsersListBox.Size = new System.Drawing.Size(280, 238);
+            this.savedUsersListBox.TabIndex = 12;
+            // 
+            // buttonOpen
+            // 
+            this.buttonOpen.Location = new System.Drawing.Point(554, 296);
+            this.buttonOpen.Name = "buttonOpen";
+            this.buttonOpen.Size = new System.Drawing.Size(75, 23);
+            this.buttonOpen.TabIndex = 13;
+            this.buttonOpen.Text = "OPEN";
+            this.buttonOpen.UseVisualStyleBackColor = true;
+            this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(346, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(95, 13);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "List of saved users";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 355);
+            this.ClientSize = new System.Drawing.Size(655, 347);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.buttonOpen);
+            this.Controls.Add(this.savedUsersListBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -237,6 +270,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox streetNumTextBox;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ListBox savedUsersListBox;
+        private System.Windows.Forms.Button buttonOpen;
+        private System.Windows.Forms.Label label9;
     }
 }
 
